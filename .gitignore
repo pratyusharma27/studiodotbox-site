@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+*.pyc
+.netlify/
+# junk directory created by an earlier shell brace-expansion error
+{css,js,images,journal,work,work-with-us}/

@@ -1,0 +1,50 @@
+/* ============================================
+   Studio Dotbox - Animations (dark theme)
+   ============================================ */
+
+.intro-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--color-bg);
+  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  transition: opacity 600ms var(--ease-default);
+}
+.intro-overlay.fade-out { opacity: 0; pointer-events: none; }
+.intro-overlay svg.intro-stage { width: 320px; height: auto; }
+@media (max-width: 600px) { .intro-overlay svg.intro-stage { width: 220px; } }
+
+.intro-overlay__skip {
+  position: absolute; top: 24px; right: 24px;
+  font-size: var(--size-small); font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  background: none; border: none; cursor: pointer;
+  padding: 8px 16px; transition: color var(--transition-fast);
+}
+.intro-overlay__skip:hover { color: var(--color-red); }
+
+body.intro-active { overflow: hidden; }
+
+.philosophy-opening {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 60vh; padding: var(--space-l) 0;
+}
+.philosophy-opening svg { width: 360px; height: auto; }
+@media (max-width: 600px) { .philosophy-opening svg { width: 240px; } }
+
+.stage__mark svg * { opacity: 0; }
+.stage__mark.animate-in svg .draw-stroke {
+  stroke-dasharray: 1000; stroke-dashoffset: 1000;
+  opacity: 1; animation: draw 1200ms var(--ease-default) forwards;
+}
+.stage__mark.animate-in svg .fade-in { animation: fadeIn 600ms var(--ease-default) forwards; }
+.stage__mark.animate-in svg .fade-in-delayed-1 { animation: fadeIn 600ms var(--ease-default) 200ms forwards; }
+.stage__mark.animate-in svg .fade-in-delayed-2 { animation: fadeIn 600ms var(--ease-default) 400ms forwards; }
+.stage__mark.animate-in svg .fade-in-delayed-3 { animation: fadeIn 600ms var(--ease-default) 600ms forwards; }
+
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fadeIn { to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-overlay { display: none !important; }
+  body.intro-active { overflow: auto; }
+  .stage__mark svg * { opacity: 1 !important; }
+}

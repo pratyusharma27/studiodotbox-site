@@ -1,0 +1,30 @@
+# Studio Dotbox - Netlify configuration
+# The generator writes ~50 static pages into the repo root, so the publish
+# directory is the root. Netlify runs the generator server-side on each deploy.
+
+[build]
+  publish = "."
+  command = "pip install -r requirements.txt && python3 generate_pages.py"
+
+[build.environment]
+  PYTHON_VERSION = "3.10"
+  # WEB3FORMS_KEY is set as a Netlify environment variable (Site settings >
+  # Environment variables), NOT committed here. The generator reads it at build.
+
+# Security headers ported from the removed vercel.json so the intent survives.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Keep the content workbook and generator out of the public served tree.
+[[redirects]]
+  from = "/studiodotbox-content.xlsx"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/generate_pages.py"
+  to = "/404.html"
+  status = 404

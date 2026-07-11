@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal | Studio Dotbox</title>
+  <meta name="description" content="Notes on architecture, design, and the practice. Written by Studio Dotbox.">
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages.css">
+  
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-header__logo" aria-label="Studio Dotbox, home">
+        <img src="images/logo.svg" alt="Studio Dotbox">
+      </a>
+      <nav class="site-header__nav" aria-label="Primary">
+        <a href="work.html">Work</a>
+        <a href="studio.html">Studio</a>
+        <a href="services.html">Services</a>
+        <a href="journal.html">Journal</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="site-header__menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <button class="mobile-menu__close" aria-label="Close menu">×</button>
+    <div class="mobile-menu__primary">
+      <a href="work.html">Work</a>
+      <a href="studio.html">Studio</a>
+      <a href="services.html">Services</a>
+      <a href="journal.html">Journal</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-menu__divider"></div>
+    <div class="mobile-menu__secondary">
+      <a href="philosophy.html">Philosophy</a>
+      <a href="how-we-work.html">How we work</a>
+    </div>
+    <div class="mobile-menu__divider"></div>
+    <div class="mobile-menu__secondary">
+      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="mobile-menu__overlay"></div>
+
+  <main>
+    <section class="lead">
+      <div class="container">
+        <h1 class="display reveal">The Journal.</h1>
+        <p class="lead__support reveal">Notes on architecture, design, and the practice. Written by Studio Dotbox.</p>
+      </div>
+    </section>
+
+    <section style="padding: var(--space-m) 0; border-top: 1px solid var(--color-line);">
+      <div class="container">
+        <p class="section-label reveal">Featured</p>
+        <a href="journal/designing-for-climate-context.html" class="journal-featured reveal">
+          <div class="journal-featured__image">
+            <img src="images/journal/designing-for-climate-context-thumb.jpg" alt="Designing for climate and context: Why I choose site-responsive architecture." onerror="this.style.display='none'; this.parentElement.innerHTML='[Featured article image]';">
+          </div>
+          <div class="journal-featured__content">
+            <p class="article-meta"><span>Design thinking</span><span>6 minute read</span><span>20 May 2026</span></p>
+            <h2 class="journal-featured__title">Designing for climate and context: Why I choose site-responsive architecture.</h2>
+            <p style="font-size: var(--size-body-large); color: var(--color-text-muted); line-height: 1.5;">Every project I take on begins not with a sketch, but with understanding the place. Site response isn&rsquo;t just a principle; it&rsquo;s the foundation of how I approach architecture.</p>
+            <span class="link-arrow">Read the article →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section style="padding: var(--space-m) 0; border-top: 1px solid var(--color-line);">
+      <div class="container">
+        <p class="section-label reveal">Recent</p>
+        <div class="journal-grid reveal">
+          <a href="journal/scaling-design-without-losing-craft.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/scaling-design-without-losing-craft-thumb.jpg" alt="Scaling design without losing craft: Lessons from 150 retail stores." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Process</span><span>7 minute read</span><span>18 May 2026</span></p>
+            <p class="journal-card__title">Scaling design without losing craft: Lessons from 150 retail stores.</p>
+            <p class="journal-card__excerpt">When you design something 150 times, you learn what matters and what doesn&rsquo;t. The Electric One project taught me how to scale without compromising.</p>
+          </a>
+
+          <a href="journal/the-material-story.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/the-material-story-thumb.jpg" alt="Materials aren&rsquo;t neutral: Why material choice shapes how people experience space." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Materials</span><span>5 minute read</span><span>16 May 2026</span></p>
+            <p class="journal-card__title">Materials aren&rsquo;t neutral: Why material choice shapes how people experience space.</p>
+            <p class="journal-card__excerpt">A polished marble floor tells a different story than exposed concrete. The materials you choose don&rsquo;t just look different. They change how people move, what they feel, what they remember.</p>
+          </a>
+
+          <a href="journal/when-clients-teach-you.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/when-clients-teach-you-thumb.jpg" alt="When clients teach you: The unexpected lessons from working with different sectors." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Studio diary</span><span>6 minute read</span><span>14 May 2026</span></p>
+            <p class="journal-card__title">When clients teach you: The unexpected lessons from working with different sectors.</p>
+            <p class="journal-card__excerpt">I used to think architects teach clients about design. Then I worked on projects across residential, retail, and hospitality. I learned more from my clients than from any textbook.</p>
+          </a>
+
+          <a href="journal/site-analysis-or-site-worship.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/site-analysis-or-site-worship-thumb.jpg" alt="Site analysis or site worship? Finding the line between response and constraint." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Design thinking</span><span>5 minute read</span><span>12 May 2026</span></p>
+            <p class="journal-card__title">Site analysis or site worship? Finding the line between response and constraint.</p>
+            <p class="journal-card__excerpt">Responding to site is fundamental. But when does context become a constraint that limits design? When do you push back, and when do you listen?</p>
+          </a>
+
+          <a href="journal/designing-for-india.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/designing-for-india-thumb.jpg" alt="Designing for India: The opportunities and complications of a rapidly changing context." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Residential</span><span>7 minute read</span><span>10 May 2026</span></p>
+            <p class="journal-card__title">Designing for India: The opportunities and complications of a rapidly changing context.</p>
+            <p class="journal-card__excerpt">India&rsquo;s building landscape is changing faster than architects can imagine. How do you design authentically within a context that&rsquo;s constantly shifting?</p>
+          </a>
+
+          <a href="journal/the-brief-is-never-the-actual-problem.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/the-brief-is-never-the-actual-problem-thumb.jpg" alt="The brief is never the actual problem: Unlearning what clients tell you they want." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Process</span><span>6 minute read</span><span>8 May 2026</span></p>
+            <p class="journal-card__title">The brief is never the actual problem: Unlearning what clients tell you they want.</p>
+            <p class="journal-card__excerpt">Clients often come with a clear brief. &ldquo;Design a retail store. Make it 5000 square meters. It should feel premium.&ldquo; But the actual problem is usually hidden beneath the stated brief.</p>
+          </a>
+
+          <a href="journal/living-with-imperfection.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/living-with-imperfection-thumb.jpg" alt="Living with imperfection: Why every completed project teaches you what you should have done differently." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Studio diary</span><span>5 minute read</span><span>6 May 2026</span></p>
+            <p class="journal-card__title">Living with imperfection: Why every completed project teaches you what you should have done differently.</p>
+            <p class="journal-card__excerpt">A year after you complete a project, you&rsquo;ll realize exactly what you should have done differently. That&rsquo;s not failure. That&rsquo;s how you learn.</p>
+          </a>
+
+          <a href="journal/when-budget-becomes-creativity.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/when-budget-becomes-creativity-thumb.jpg" alt="When budget becomes creativity: How constraints force better design thinking." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Process</span><span>5 minute read</span><span>4 May 2026</span></p>
+            <p class="journal-card__title">When budget becomes creativity: How constraints force better design thinking.</p>
+            <p class="journal-card__excerpt">Unlimited budgets don&rsquo;t produce better architecture. They produce indulgence. Constraints force you to make real choices.</p>
+          </a>
+
+          <a href="journal/the-undesigned-moments.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/the-undesigned-moments-thumb.jpg" alt="The undesigned moments: What happens in the spaces between your careful plans." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Design thinking</span><span>4 minute read</span><span>2 May 2026</span></p>
+            <p class="journal-card__title">The undesigned moments: What happens in the spaces between your careful plans.</p>
+            <p class="journal-card__excerpt">You design spaces with intention. But some of the most memorable moments in buildings happen in spaces you didn&rsquo;t explicitly design. The threshold. The accidental corner. The unexpected view.</p>
+          </a>
+
+          <a href="journal/the-aerotropolis-dream.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/the-aerotropolis-dream-thumb.jpg" alt="The aerotropolis dream: What my research taught me about building better cities." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Urban planning</span><span>8 minute read</span><span>30 April 2026</span></p>
+            <p class="journal-card__title">The aerotropolis dream: What my research taught me about building better cities.</p>
+            <p class="journal-card__excerpt">My master&rsquo;s research on aerotropolis concepts around Noida International Airport opened my eyes to how airports reshape cities. It&rsquo;s the future of metropolitan planning.</p>
+          </a>
+
+          <a href="journal/working-across-scales.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/working-across-scales-thumb.jpg" alt="Working across scales: From master planning to a single chair, it&rsquo;s all the same thinking." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Design thinking</span><span>6 minute read</span><span>28 April 2026</span></p>
+            <p class="journal-card__title">Working across scales: From master planning to a single chair, it&rsquo;s all the same thinking.</p>
+            <p class="journal-card__excerpt">I&rsquo;ve designed a retail system across 150 locations, an office workspace, and a cabin. The scale changed. The fundamental thinking didn&rsquo;t.</p>
+          </a>
+
+          <a href="journal/hiring-architecture-talent.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/hiring-architecture-talent-thumb.jpg" alt="Hiring great architecture talent: What I&rsquo;ve learned from building teams." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Studio diary</span><span>6 minute read</span><span>26 April 2026</span></p>
+            <p class="journal-card__title">Hiring great architecture talent: What I&rsquo;ve learned from building teams.</p>
+            <p class="journal-card__excerpt">I built a hiring consultancy because I realized that finding the right talent is as important as design itself. Here&rsquo;s what makes an architect worth working with.</p>
+          </a>
+
+          <a href="journal/sustainability-beyond-buzzwords.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/sustainability-beyond-buzzwords-thumb.jpg" alt="Sustainability beyond buzzwords: What it actually means to design responsibly." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Materials</span><span>7 minute read</span><span>24 April 2026</span></p>
+            <p class="journal-card__title">Sustainability beyond buzzwords: What it actually means to design responsibly.</p>
+            <p class="journal-card__excerpt">Sustainability has become a buzzword in architecture. But true sustainable design is about honest choices, not greenwashing.</p>
+          </a>
+
+          <a href="journal/the-unfinished-nature-of-practice.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/the-unfinished-nature-of-practice-thumb.jpg" alt="The unfinished nature of practice: Why eight years in, I feel like I&rsquo;m still learning the basics." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Studio diary</span><span>6 minute read</span><span>22 April 2026</span></p>
+            <p class="journal-card__title">The unfinished nature of practice: Why eight years in, I feel like I&rsquo;m still learning the basics.</p>
+            <p class="journal-card__excerpt">Eight years into architecture practice, I thought I&rsquo;d have most things figured out. Instead, I realize I&rsquo;m only beginning to understand what good design really means.</p>
+          </a>
+
+          <a href="journal/geometry-and-meaning.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/geometry-and-meaning-thumb.jpg" alt="Geometry and meaning: How geometric simplicity creates spatial richness." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Design thinking</span><span>5 minute read</span><span>20 April 2026</span></p>
+            <p class="journal-card__title">Geometry and meaning: How geometric simplicity creates spatial richness.</p>
+            <p class="journal-card__excerpt">Architects often overthink geometry. But the most powerful spaces usually come from geometric simplicity and the richness it creates through repetition and proportion.</p>
+          </a>
+
+          <a href="journal/the-view-problem.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/the-view-problem-thumb.jpg" alt="The view problem: When the best vista isn&rsquo;t the best design solution." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Design thinking</span><span>4 minute read</span><span>18 April 2026</span></p>
+            <p class="journal-card__title">The view problem: When the best vista isn&rsquo;t the best design solution.</p>
+            <p class="journal-card__excerpt">Every scenic property has a view that seems to demand the biggest window. But the best design sometimes means not giving people what they want.</p>
+          </a>
+
+          <a href="journal/the-collaboration-gap.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/the-collaboration-gap-thumb.jpg" alt="The collaboration gap: Why architects and builders speak different languages." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Process</span><span>6 minute read</span><span>16 April 2026</span></p>
+            <p class="journal-card__title">The collaboration gap: Why architects and builders speak different languages.</p>
+            <p class="journal-card__excerpt">Most construction problems come from misunderstanding between architects and builders. Closing this gap is where real design excellence happens.</p>
+          </a>
+
+          <a href="journal/personal-brand-as-architect.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/personal-brand-as-architect-thumb.jpg" alt="Building personal brand as an architect: Why thought leadership matters for your practice." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Studio diary</span><span>6 minute read</span><span>14 April 2026</span></p>
+            <p class="journal-card__title">Building personal brand as an architect: Why thought leadership matters for your practice.</p>
+            <p class="journal-card__excerpt">I spent my first five years as an architect thinking personal branding was self-serving. I&rsquo;ve realized it&rsquo;s essential to building a meaningful practice.</p>
+          </a>
+
+          <a href="journal/returning-to-craft.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/returning-to-craft-thumb.jpg" alt="Returning to craft: Why thoughtful hand-done details matter in an automated world." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Materials</span><span>5 minute read</span><span>12 April 2026</span></p>
+            <p class="journal-card__title">Returning to craft: Why thoughtful hand-done details matter in an automated world.</p>
+            <p class="journal-card__excerpt">In a world of standardization and prefabrication, there&rsquo;s increasing value in architectural details that are thoughtfully crafted, not mass-produced.</p>
+          </a>
+
+          <a href="journal/architecture-and-wellbeing.html" class="journal-card">
+            <div class="journal-card__image">
+              <img src="images/journal/architecture-and-wellbeing-thumb.jpg" alt="Architecture and wellbeing: What I&rsquo;ve learned about designing for human health and happiness." onerror="this.style.display='none'; this.parentElement.innerHTML='[Article image]';">
+            </div>
+            <p class="journal-card__meta"><span>Residential</span><span>7 minute read</span><span>10 April 2026</span></p>
+            <p class="journal-card__title">Architecture and wellbeing: What I&rsquo;ve learned about designing for human health and happiness.</p>
+            <p class="journal-card__excerpt">For years, I thought good architecture was about aesthetics and function. I&rsquo;ve learned it&rsquo;s fundamentally about creating environments where people thrive.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: var(--space-m) 0; border-top: 1px solid var(--color-line);">
+      <div class="container">
+        <p class="section-label reveal">Browse the Journal by topic</p>
+        <p class="reveal" style="font-size: var(--size-body-large); font-weight: var(--weight-light); color: var(--color-text-muted); line-height: 1.8;">Design thinking · Process · Residential · Retail · Commercial · Hospitality · Urban planning · Consultancy · Materials · Site notes · Studio diary</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__columns">
+
+        <div class="site-footer__column">
+          <a href="index.html" class="site-footer__logo" aria-label="Studio Dotbox, home">
+            <img src="images/logo.svg" alt="Studio Dotbox">
+          </a>
+          <p>Architecture, interiors, and urban planning.</p>
+          <p>A studio-based practice, based in Noida.</p>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>Contact</h4>
+          <a href="mailto:studiodotbox@gmail.com">studiodotbox@gmail.com</a>
+          <a href="tel:+919571129136">+91 9571 129 136</a>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>Navigate</h4>
+          <a href="index.html">Home</a>
+          <a href="work.html">Work</a>
+          <a href="studio.html">Studio</a>
+          <a href="services.html">Services</a>
+          <a href="philosophy.html">Philosophy</a>
+          <a href="how-we-work.html">How we work</a>
+          <a href="journal.html">Journal</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>Follow</h4>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+
+          <div class="site-footer__subscribe">
+            <p>New writing from the studio, once or twice a month.</p>
+            <form action="https://api.web3forms.com/submit" method="POST" onsubmit="event.preventDefault(); alert('Subscribe form will work once the Web3Forms key is added.');">
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
+              <input type="hidden" name="subject" value="Studio Dotbox Journal subscriber">
+              <input type="email" name="email" placeholder="Your email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>Work with us</h4>
+          <a href="work-with-us.html#professionals">For professionals →</a>
+          <a href="work-with-us.html#contractors">For contractors →</a>
+          <a href="work-with-us.html#vendors">For vendors →</a>
+        </div>
+
+      </div>
+
+      <div class="site-footer__bar">
+        <span>© Studio Dotbox, 2026.</span>
+        <div>
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  
+</body>
+</html>

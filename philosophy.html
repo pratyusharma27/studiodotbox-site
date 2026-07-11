@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philosophy | Studio Dotbox</title>
+  <meta name="description" content="Design Out of the Box is how Studio Dotbox thinks about every project.">
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-header__logo" aria-label="Studio Dotbox, home">
+        <img src="images/logo.svg" alt="Studio Dotbox">
+      </a>
+      <nav class="site-header__nav" aria-label="Primary">
+        <a href="work.html">Work</a>
+        <a href="studio.html">Studio</a>
+        <a href="services.html">Services</a>
+        <a href="journal.html">Journal</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="site-header__menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <button class="mobile-menu__close" aria-label="Close menu">×</button>
+    <div class="mobile-menu__primary">
+      <a href="work.html">Work</a>
+      <a href="studio.html">Studio</a>
+      <a href="services.html">Services</a>
+      <a href="journal.html">Journal</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-menu__divider"></div>
+    <div class="mobile-menu__secondary">
+      <a href="philosophy.html">Philosophy</a>
+      <a href="how-we-work.html">How we work</a>
+    </div>
+    <div class="mobile-menu__divider"></div>
+    <div class="mobile-menu__secondary">
+      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="mobile-menu__overlay"></div>
+
+  <main>
+    <section id="philosophy-opening" class="philosophy-opening">
+      <div class="container-narrow" style="text-align: center;">
+        <svg viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
+          <g id="phil-cube-group" stroke="#E8000D" stroke-width="3" fill="none" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="square">
+            <circle id="phil-dot" cx="100" cy="110" r="8" fill="#E8000D" stroke="none" style="opacity: 0;"/>
+            <path id="phil-line" d="M 100 110 L 220 110" style="opacity: 0;"/>
+            <path id="phil-square" d="M 100 110 L 100 230 L 220 230 L 220 110" style="opacity: 0;"/>
+            <path id="phil-depth-tl" d="M 100 110 L 160 50" style="opacity: 0;"/>
+            <path id="phil-depth-tr" d="M 220 110 L 280 50" style="opacity: 0;"/>
+            <path id="phil-depth-br" d="M 220 230 L 280 170" style="opacity: 0;"/>
+            <path id="phil-back" d="M 160 50 L 280 50 L 280 170 L 220 230" style="opacity: 0;"/>
+          </g>
+        </svg>
+        <p id="philosophy-text" class="philosophy-stages" style="opacity: 0; transform: translateY(20px); margin-top: var(--space-l);">
+          <span>Dot.</span> Line. Plane. Box.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding: var(--space-m) 0;">
+      <div class="container-narrow">
+        <p class="thesis reveal">We call this Design Out of the Box.</p>
+        <p class="reveal" style="text-align: center; font-size: var(--size-body-large); color: var(--color-text-muted); max-width: 640px; margin: 0 auto;">It is how we think about every project, from the first conversation to the final handover. A single idea, extended through four stages, into the space you inhabit.</p>
+      </div>
+    </section>
+
+    <section class="stages">
+      <div class="container">
+        <div class="stage reveal">
+          <div class="stage__mark"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle class="fade-in" cx="40" cy="40" r="6" fill="#E8000D"/></svg></div>
+          <div class="stage__content">
+            <h3>The Dot.</h3>
+            <p class="stage__sub">The starting point.</p>
+            <p>The dot is the brief. Before any drawing begins, we establish what the space needs to do, who it is for, and what will define its success. Budget, site, function, client, context. Every project begins here, with a clear, agreed starting point.</p>
+          </div>
+        </div>
+        <div class="stage reveal">
+          <div class="stage__mark"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><line class="draw-stroke" x1="10" y1="40" x2="70" y2="40" stroke="#E8000D" stroke-width="3" stroke-linecap="square"/></svg></div>
+          <div class="stage__content">
+            <h3>The Line.</h3>
+            <p class="stage__sub">The direction.</p>
+            <p>The line is the plan. The circulation, the adjacencies, the flow from one space to the next. At this stage we resolve how the space works before we consider how it looks. A good plan makes the rest of the work easier. A poor plan cannot be saved by materials.</p>
+          </div>
+        </div>
+        <div class="stage reveal">
+          <div class="stage__mark"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect class="draw-stroke" x="15" y="15" width="50" height="50" fill="none" stroke="#E8000D" stroke-width="3"/></svg></div>
+          <div class="stage__content">
+            <h3>The Plane.</h3>
+            <p class="stage__sub">The surface.</p>
+            <p>The plane is the material decision. Floors, walls, ceilings, finishes, light, texture. This is where the design becomes tangible, and where most of the budget is spent. Every choice at this stage is judged against two questions: does it serve the space, and will it hold up over time.</p>
+          </div>
+        </div>
+        <div class="stage reveal">
+          <div class="stage__mark">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" stroke="#E8000D" stroke-width="3" stroke-linejoin="miter" stroke-linecap="square">
+                <rect class="fade-in" x="15" y="25" width="40" height="40"/>
+                <line class="fade-in-delayed-1" x1="15" y1="25" x2="30" y2="10"/>
+                <line class="fade-in-delayed-1" x1="55" y1="25" x2="70" y2="10"/>
+                <line class="fade-in-delayed-1" x1="55" y1="65" x2="70" y2="50"/>
+                <path class="fade-in-delayed-2" d="M 30 10 L 70 10 L 70 50"/>
+                <line class="fade-in-delayed-3" x1="70" y1="50" x2="55" y2="65"/>
+              </g>
+            </svg>
+          </div>
+          <div class="stage__content">
+            <h3>The Box.</h3>
+            <p class="stage__sub">The inhabited space.</p>
+            <p>The box is the finished project. But the work is not finished when construction ends. It is finished when the space performs. Commercially for retail and hospitality. Functionally for homes and workplaces. Experientially across all of them. The box is judged by use, not by photographs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="practice">
+      <div class="container">
+        <p class="practice__heading reveal">What this means in practice</p>
+        <div class="practice__lines reveal">
+          <p>We begin every project by locating the dot. The single idea the space needs to hold.</p>
+          <p>We design for how the space performs, not just how it photographs.</p>
+          <p>We treat material, light, and proportion as the plane: the physical ground the experience stands on.</p>
+          <p>We believe the final box is judged by the people who inhabit it, not by the people who design it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-narrow">
+        <p class="philosophy-closing reveal">Most design starts with a box. We start with a dot, and we work outward.</p>
+      </div>
+    </section>
+
+    <section class="continue">
+      <div class="container">
+        <p class="continue__label reveal">Continue</p>
+        <div class="continue__links reveal">
+          <a href="how-we-work.html" class="link-arrow">See how we work →</a>
+          <a href="work.html" class="link-arrow">See the projects →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__columns">
+
+        <div class="site-footer__column">
+          <a href="index.html" class="site-footer__logo" aria-label="Studio Dotbox, home">
+            <img src="images/logo.svg" alt="Studio Dotbox">
+          </a>
+          <p>Architecture, interiors, and urban planning.</p>
+          <p>A studio-based practice, based in Noida.</p>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>Contact</h4>
+          <a href="mailto:studiodotbox@gmail.com">studiodotbox@gmail.com</a>
+          <a href="tel:+919571129136">+91 9571 129 136</a>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>Navigate</h4>
+          <a href="index.html">Home</a>
+          <a href="work.html">Work</a>
+          <a href="studio.html">Studio</a>
+          <a href="services.html">Services</a>
+          <a href="philosophy.html">Philosophy</a>
+          <a href="how-we-work.html">How we work</a>
+          <a href="journal.html">Journal</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>Follow</h4>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+
+          <div class="site-footer__subscribe">
+            <p>New writing from the studio, once or twice a month.</p>
+            <form action="https://api.web3forms.com/submit" method="POST" onsubmit="event.preventDefault(); alert('Subscribe form will work once the Web3Forms key is added.');">
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
+              <input type="hidden" name="subject" value="Studio Dotbox Journal subscriber">
+              <input type="email" name="email" placeholder="Your email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>Work with us</h4>
+          <a href="work-with-us.html#professionals">For professionals →</a>
+          <a href="work-with-us.html#contractors">For contractors →</a>
+          <a href="work-with-us.html#vendors">For vendors →</a>
+        </div>
+
+      </div>
+
+      <div class="site-footer__bar">
+        <span>© Studio Dotbox, 2026.</span>
+        <div>
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
