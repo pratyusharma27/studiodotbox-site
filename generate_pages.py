@@ -33,6 +33,25 @@ SITE_ROOT = SCRIPT_DIR
 # which the pre-flight audit treats as a hard failure.
 WEB3FORMS_KEY = os.environ.get('WEB3FORMS_KEY', 'YOUR_WEB3FORMS_KEY_HERE')
 
+# Canonical host for this site. www is the primary domain; canonical tags,
+# sitemap URLs, and robots all point here.
+BASE_URL = "https://www.studiodotbox.com"
+
+# Populated by write_page as pages are built, then consumed by build_sitemap.
+PAGES_BUILT = []
+
+
+def canonical_url(filename):
+    """Map an output filename to its canonical www https URL (clean, no .html)."""
+    path = filename.replace(os.sep, "/")
+    if path == "index.html":
+        return BASE_URL + "/"
+    if path.endswith("/index.html"):
+        path = path[:-len("index.html")]
+    elif path.endswith(".html"):
+        path = path[:-len(".html")]
+    return BASE_URL + "/" + path
+
 
 # ==================== TEMPLATES ====================
 
@@ -43,6 +62,7 @@ HEAD_TEMPLATE = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
   <meta name="description" content="{description}">
+  {canonical}
 
   <link rel="icon" type="image/svg+xml" href="{css_prefix}images/favicon.svg">
   <link rel="alternate icon" type="image/png" href="{css_prefix}images/favicon.png">
@@ -193,8 +213,15 @@ def write_page(filename, title, description, body, depth=0,
 
     body_class_attr = f' class="{body_class}"' if body_class else ""
 
+    # Canonical tag (www https). Skip for the 404 page.
+    if filename == "404.html":
+        canonical_tag = ""
+    else:
+        canonical_tag = f'<link rel="canonical" href="{canonical_url(filename)}">'
+        PAGES_BUILT.append(filename)
+
     html = HEAD_TEMPLATE.format(
-        title=title, description=description,
+        title=title, description=description, canonical=canonical_tag,
         css_prefix=prefix, extra_css=extra_css, body_class=body_class_attr
     )
 
@@ -1482,6 +1509,25 @@ def build_journal_article(article):
 
 # ==================== MAIN ====================
 
+def build_sitemap():
+    """Emit sitemap.xml listing every built page as its canonical www https URL."""
+    urls = sorted({canonical_url(f) for f in PAGES_BUILT})
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for u in urls:
+        lines.append(f"  <url><loc>{u}</loc></url>")
+    lines.append("</urlset>")
+    (SITE_ROOT / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"Built: sitemap.xml ({len(urls)} urls)")
+
+
+def build_robots():
+    """Emit robots.txt allowing all crawlers and pointing to the sitemap."""
+    content = f"User-agent: *\nAllow: /\n\nSitemap: {BASE_URL}/sitemap.xml\n"
+    (SITE_ROOT / "robots.txt").write_text(content, encoding="utf-8")
+    print("Built: robots.txt")
+
+
 def main():
     print("Studio Dotbox: building all pages...")
     print(f"Reading content from: {EXCEL_FILE}")
@@ -1513,6 +1559,10 @@ def main():
     build_journal_archive(articles)
     for article in articles:
         build_journal_article(article)
+
+    # SEO artifacts (must run last, after PAGES_BUILT is fully populated)
+    build_sitemap()
+    build_robots()
 
     print()
     print("Build complete.")
