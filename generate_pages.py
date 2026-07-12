@@ -115,8 +115,8 @@ HEADER_TEMPLATE = """
     </div>
     <div class="mobile-menu__divider"></div>
     <div class="mobile-menu__secondary">
-      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/company/studio-dotbox/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/studiodotbox/" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
   <div class="mobile-menu__overlay"></div>
@@ -156,17 +156,18 @@ FOOTER_TEMPLATE = """
 
         <div class="site-footer__column">
           <h4>Follow</h4>
-          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/company/studio-dotbox/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/studiodotbox/" target="_blank" rel="noopener">Instagram</a>
 
           <div class="site-footer__subscribe">
             <p>New writing from the studio, once or twice a month.</p>
-            <form action="https://api.web3forms.com/submit" method="POST" onsubmit="event.preventDefault(); alert('Subscribe form will work once the Web3Forms key is added.');">
+            <form id="subscribe-form" action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
               <input type="hidden" name="subject" value="Studio Dotbox Journal subscriber">
               <input type="email" name="email" placeholder="Your email" required>
               <button type="submit">Subscribe</button>
             </form>
+            <p id="subscribe-success" style="display:none; color: var(--color-text-muted);">Thank you. New writing will land in your inbox.</p>
           </div>
         </div>
 
@@ -190,6 +191,29 @@ FOOTER_TEMPLATE = """
   </footer>
 
   <script src="{img_prefix}js/main.js"></script>
+  <script>
+    (function() {{
+      var sf = document.getElementById('subscribe-form');
+      if (!sf) return;
+      var ok = document.getElementById('subscribe-success');
+      sf.addEventListener('submit', function(e) {{
+        e.preventDefault();
+        var data = new FormData(sf);
+        var ak = data.get('access_key') || '';
+        if (!ak || ak.indexOf('YOUR_') === 0) {{
+          alert('Subscribe form will work once the Web3Forms key is added.');
+          return;
+        }}
+        fetch('https://api.web3forms.com/submit', {{ method: 'POST', body: data }})
+          .then(function(r) {{ return r.json(); }})
+          .then(function(j) {{
+            if (j.success) {{ sf.style.display = 'none'; if (ok) ok.style.display = 'block'; }}
+            else {{ alert('Sorry, something went wrong. Please try again.'); }}
+          }})
+          .catch(function() {{ alert('Sorry, something went wrong. Please try again.'); }});
+      }});
+    }})();
+  </script>
   {extra_js}
 </body>
 </html>
