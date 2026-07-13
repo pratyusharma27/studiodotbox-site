@@ -33,6 +33,14 @@ SITE_ROOT = SCRIPT_DIR
 # which the pre-flight audit treats as a hard failure.
 WEB3FORMS_KEY = os.environ.get('WEB3FORMS_KEY', 'YOUR_WEB3FORMS_KEY_HERE')
 
+# Google Analytics 4 measurement ID (format: G-XXXXXXXXXX). Injected into the
+# <head> of every page via write_page(). A measurement ID is not a secret (it
+# ships in public page source), so it is safe to hardcode the default here;
+# it can still be overridden per-build with a GA_MEASUREMENT_ID env var on
+# Netlify. When the value is left as the placeholder, no analytics tag is
+# emitted, so builds never ship a broken or fake tag.
+GA_MEASUREMENT_ID = os.environ.get('GA_MEASUREMENT_ID', 'G-WMKRFRGXS8')
+
 # Canonical host for this site. www is the primary domain; canonical tags,
 # sitemap URLs, and robots all point here.
 BASE_URL = "https://www.studiodotbox.com"
@@ -55,12 +63,25 @@ def canonical_url(filename):
 
 # ==================== TEMPLATES ====================
 
+# Google Analytics 4 (gtag.js). Kept out of HEAD_TEMPLATE's .format() call so
+# the JavaScript braces below are never treated as format fields. The literal
+# __GA_ID__ token is swapped for the real measurement ID in write_page().
+GA_SNIPPET_TEMPLATE = """  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=__GA_ID__"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '__GA_ID__');
+  </script>
+"""
+
 HEAD_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title}</title>
+{ga}  <title>{title}</title>
   <meta name="description" content="{description}">
   {canonical}
 
@@ -244,9 +265,18 @@ def write_page(filename, title, description, body, depth=0,
         canonical_tag = f'<link rel="canonical" href="{canonical_url(filename)}">'
         PAGES_BUILT.append(filename)
 
+    # Google Analytics: emit the gtag.js block only when a real measurement ID
+    # is configured. While GA_MEASUREMENT_ID is left as the placeholder, ga_tag
+    # is empty so no broken/fake tag is shipped.
+    if GA_MEASUREMENT_ID and GA_MEASUREMENT_ID != 'G-XXXXXXXXXX':
+        ga_tag = GA_SNIPPET_TEMPLATE.replace('__GA_ID__', GA_MEASUREMENT_ID)
+    else:
+        ga_tag = ""
+
     html = HEAD_TEMPLATE.format(
         title=title, description=description, canonical=canonical_tag,
-        css_prefix=prefix, extra_css=extra_css, body_class=body_class_attr
+        css_prefix=prefix, extra_css=extra_css, body_class=body_class_attr,
+        ga=ga_tag
     )
 
     if intro_overlay:
