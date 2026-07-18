@@ -197,6 +197,7 @@ FOOTER_TEMPLATE = """
           <a href="{prefix}work-with-us.html#professionals">For professionals →</a>
           <a href="{prefix}work-with-us.html#contractors">For contractors →</a>
           <a href="{prefix}work-with-us.html#vendors">For vendors →</a>
+          <a href="{prefix}work-with-us.html#community">For the community →</a>
         </div>
 
       </div>
@@ -1110,6 +1111,15 @@ def build_work_with_us():
         <h2 class="sector__title">For suppliers, manufacturers, and product companies.</h2>
         <p class="sector__description">Studio Dotbox works with a network of vendors, suppliers, manufacturers, brands, and product companies across materials, finishes, lighting, furniture, fittings, and everything else that makes a designed space possible. If you want your products to be specified on projects across six disciplines, we would like to know your catalogue.</p>
         <a href="https://forms.gle/ux1daK99iSQHy9MG6" target="_blank" rel="noopener" class="btn btn--primary">Apply for empanelment →</a>
+      </div>
+    </section>
+
+    <section id="community" class="sector reveal">
+      <div class="container">
+        <p class="sector__number">For the community</p>
+        <h2 class="sector__title">For architects and architecture students across India.</h2>
+        <p class="sector__description">Studio Dotbox runs a professional community of architects across India, organised state by state, built for collaboration, opportunity sharing, knowledge exchange, and collective growth. It is where referrals move, where job and project openings are posted and read, and where the wider profession stays in touch. Architects and architecture students who want to be part of that network can register here.</p>
+        <a href="https://forms.gle/ZfU3V9SdY7PiKLDz5" target="_blank" rel="noopener" class="btn btn--primary">Join the community →</a>
       </div>
     </section>
 
