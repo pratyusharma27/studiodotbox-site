@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Grid | Studio Dotbox</title>
+<meta name="description" content="The Grid by Studio Dotbox: a free community for architecture students, with live masterclasses and three paid tracks on what college does not teach.">
+<link rel="canonical" href="https://www.studiodotbox.com/the-grid">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="The Grid by Studio Dotbox">
+<meta property="og:description" content="Learn what college skips. Live masterclasses and courses for architecture students by Ar. Pratyush Sharma.">
+<meta property="og:url" content="https://www.studiodotbox.com/the-grid">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2213461982899857');
+fbq('track','PageView');
+</script>
+
+<style>
+:root{
+  --red:#E8000D; --bg:#0A0A0A; --text:#EEEEEE; --muted:#999999; --line:#2A2A2A; --surface:#161616;
+  --display:"Oswald","Arial Narrow",Arial,sans-serif;
+  --body:"DM Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --h1:64px; --h2:44px; --h3:24px; --lg:20px; --base:17px; --sm:14px; --xs:12px;
+  --sp-s:32px; --sp-m:96px; --sp-l:140px;
+}
+@media (max-width:768px){:root{--h1:44px;--h2:32px;--h3:21px;--lg:18px;--base:16px;--sp-m:64px;--sp-l:72px}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:var(--base);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+@media (max-width:600px){.container{padding:0 16px}}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.01em;line-height:1.05;margin:0}
+h1{font-size:var(--h1)} h2{font-size:var(--h2)} h3{font-size:var(--h3);letter-spacing:.02em}
+p{margin:0 0 16px}
+.label{display:block;font-size:var(--xs);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.label.red{color:var(--red)}
+.muted{color:var(--muted)}
+.section{padding:var(--sp-m) 0;border-top:1px solid var(--line)}
+.head{max-width:720px;margin-bottom:40px}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:30;background:rgba(10,10,10,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo img{height:22px;width:auto}
+.nav{display:flex;gap:26px;font-size:var(--sm)}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--text)}
+@media (max-width:900px){.nav{display:none}}
+
+/* image-swappable buttons: CSS fallback until the ChatGPT image is in place */
+.ib{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;font-family:var(--display);font-size:18px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid var(--red);background:var(--red);color:#fff;transition:background .2s,border-color .2s}
+.ib:hover{background:#c4000b}
+.ib.ghost{background:transparent;border-color:#555;color:var(--text)}
+.ib.ghost:hover{border-color:var(--text)}
+@media (max-width:600px){.ib{font-size:16px;letter-spacing:.05em;padding:0 18px}}
+.ib .arr{color:inherit}
+.ib.ghost .arr{color:var(--red)}
+.ib.has-img{padding:0;border:0;background:none;min-height:0;width:var(--w,360px);max-width:100%}
+.ib.has-img:hover{background:none;filter:brightness(1.08)}
+.ib.has-img img{width:100%;height:auto}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px}
+
+/* hero */
+.hero{padding:var(--sp-l) 0 var(--sp-m)}
+.hero-grid{display:grid;grid-template-columns:minmax(220px,420px) 1fr;gap:72px;align-items:center}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+.grid-logo{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+@media (max-width:860px){.grid-logo{max-width:260px}}
+.grid-logo img{width:100%;height:100%;object-fit:contain;position:relative;z-index:1}
+.grid-logo .fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:28px 28px}
+.grid-logo .fallback b{font-family:var(--display);font-size:56px;letter-spacing:.06em;line-height:1}
+.grid-logo .fallback span{font-size:var(--xs);letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.hero h1 span{color:var(--red)}
+.hero .lead{font-size:var(--lg);margin:24px 0 28px;max-width:640px}
+.benefits{list-style:none;margin:0 0 36px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+@media (max-width:600px){.benefits{grid-template-columns:1fr}}
+.benefits li{padding:14px 0 14px 22px;border-top:1px solid var(--line);position:relative;font-size:15px}
+.benefits li::before{content:"";position:absolute;left:0;top:23px;width:8px;height:8px;background:var(--red)}
+.benefits b{font-weight:600;display:block}
+.benefits span{color:var(--muted)}
+
+/* dropdown mechanics */
+.drop{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.drop>.inner{overflow:hidden;min-height:0}
+.drop.open{grid-template-rows:1fr}
+
+/* workshop card */
+.card{border:1px solid var(--line);background:var(--surface)}
+.card-top{display:grid;grid-template-columns:1.5fr 1fr}
+@media (max-width:860px){.card-top{grid-template-columns:1fr}}
+.card-main{padding:40px}
+.card-side{padding:40px;border-left:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+@media (max-width:860px){.card-side{border-left:0;border-top:1px solid var(--line)}}
+@media (max-width:600px){.card-main,.card-side{padding:24px}}
+.card h2{font-size:clamp(28px,4vw,40px);margin-bottom:16px}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:10px 24px;margin:28px 0 0;font-size:var(--sm)}
+.facts dt{color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:var(--xs);padding-top:2px}
+.facts dd{margin:0}
+.price{font-family:var(--display);font-size:64px;font-weight:600;line-height:1}
+.price small{font-family:var(--body);font-size:var(--sm);color:var(--muted);font-weight:400;margin-left:6px}
+.addon{font-size:var(--sm);color:var(--muted);margin:14px 0 0}
+.addon b{color:var(--text);font-weight:500}
+.seats{font-size:var(--sm);color:var(--red);margin:12px 0 0}
+.card-side .btn-row{flex-direction:column}
+.card-side .ib{width:100%}
+.card-side .ib.has-img{width:100%}
+.details{border-top:1px solid var(--line)}
+.details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding:40px}
+@media (max-width:860px){.details-grid{grid-template-columns:1fr;gap:28px}}
+@media (max-width:600px){.details-grid{padding:24px}}
+.details h3{font-size:18px;margin-bottom:14px}
+.details ol,.details ul{margin:0;padding-left:20px;font-size:15px;color:var(--muted)}
+.details li{margin-bottom:8px}
+.details li b{color:var(--text);font-weight:500}
+
+/* courses */
+.courses{display:grid;grid-template-columns:repeat(3,1fr);column-gap:16px}
+.tile{order:1;text-align:left;border:1px solid var(--line);background:var(--surface);aspect-ratio:3/2;position:relative;overflow:hidden;transition:border-color .2s}
+.tile:hover{border-color:#555}
+.tile[aria-expanded=true]{border-color:var(--red)}
+.tile .tf{position:absolute;inset:0;padding:24px;display:flex;flex-direction:column;justify-content:space-between;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:24px 24px}
+.tile .tf h3{font-size:clamp(28px,3.4vw,40px)}
+.tile .tf .yr{font-size:var(--sm);color:var(--muted)}
+.tile .tf .more{font-family:var(--display);letter-spacing:.1em;text-transform:uppercase;font-size:14px;color:var(--red)}
+.tile .tf .tag{font-size:var(--xs);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.tile.has-img{border-color:transparent}
+.tile.has-img[aria-expanded=true]{border-color:var(--red)}
+.tile.has-img img{width:100%;height:100%;object-fit:cover}
+.panel{order:4;grid-column:1/-1}
+.panel.open .inner>div{margin-top:16px}
+.cdetail{border:1px solid var(--line);border-top:3px solid var(--red);background:var(--surface);padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+@media (max-width:860px){.cdetail{grid-template-columns:1fr;gap:28px;padding:24px}}
+.cdetail h3{font-size:32px;margin-bottom:8px}
+.sessions{list-style:none;margin:20px 0 0;padding:0;counter-reset:s}
+.sessions li{display:grid;grid-template-columns:48px 1fr;padding:12px 0;border-top:1px solid var(--line);font-size:15px;counter-increment:s}
+.sessions li::before{content:"S" counter(s);color:var(--red);font-family:var(--display);letter-spacing:.06em}
+.sessions li span{color:var(--muted)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:10px 20px;font-size:var(--sm);margin:0 0 28px}
+.kv dt{color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:var(--xs);padding-top:2px}
+.kv dd{margin:0}
+.fee{font-family:var(--display);font-size:44px;line-height:1;margin-bottom:6px}
+.fee-note{font-size:var(--sm);color:var(--muted);margin-bottom:24px}
+.cdetail .btn-row{flex-direction:column}
+.cdetail .ib,.cdetail .ib.has-img{width:100%}
+@media (max-width:700px){
+  .courses{grid-template-columns:1fr;row-gap:0}
+  .tile{margin-top:16px}
+  .t1{order:1}.p1{order:2}.t2{order:3}.p2{order:4}.t3{order:5}.p3{order:6}
+}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(260px,440px) 1fr;gap:72px;align-items:start}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:36px}}
+.portrait{aspect-ratio:4/5;background:var(--surface);border:1px solid var(--line);position:relative;overflow:hidden}
+@media (max-width:860px){.portrait{max-width:360px}}
+.portrait img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+.portrait .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:var(--sm);text-align:center;padding:24px}
+.about h2{margin-bottom:24px}
+.about p{max-width:640px}
+.creds{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:28px 0}
+@media (max-width:600px){.creds{grid-template-columns:1fr 1fr}}
+.creds div{padding:16px 12px 16px 0}
+.creds b{display:block;font-family:var(--display);font-size:26px;font-weight:500;line-height:1.1}
+.creds span{font-size:var(--xs);color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.social{display:flex;flex-wrap:wrap;gap:10px}
+.soc{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 20px;border:1px solid #555;text-decoration:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.1em;font-size:15px}
+.soc:hover{border-color:var(--red);color:var(--red)}
+
+/* ratings and testimonials */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:40px}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}}
+.stat{background:var(--bg);padding:28px 24px}
+.stat b{display:block;font-family:var(--display);font-size:52px;font-weight:600;line-height:1}
+.stat b small{font-size:24px;color:var(--muted)}
+.stat span{font-size:var(--sm);color:var(--muted)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:860px){.quotes{grid-template-columns:1fr}}
+.quote{border:1px solid var(--line);padding:28px;margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:20px;background:var(--surface)}
+.quote.placeholder{border-style:dashed;background:transparent}
+.quote blockquote{margin:0;font-size:var(--lg);line-height:1.5}
+.quote blockquote::before{content:"\201C";display:block;font-family:var(--display);color:var(--red);font-size:48px;line-height:.6;margin-bottom:12px}
+.quote figcaption{font-size:var(--sm);color:var(--muted)}
+.quote figcaption b{color:var(--text);font-weight:500;display:block}
+.stars{color:var(--red);letter-spacing:2px;font-size:15px}
+
+/* links hub */
+.hub{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (max-width:760px){.hub{grid-template-columns:1fr}}
+.hub-item{background:var(--bg);padding:28px;display:flex;flex-direction:column;gap:18px;justify-content:space-between}
+.hub-item h3{font-size:20px;margin-bottom:6px}
+.hub-item p{color:var(--muted);font-size:15px;margin:0}
+.hub-item .ib,.hub-item .ib.has-img{width:100%;max-width:440px}
+
+/* faq */
+.faq-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:72px}
+@media (max-width:860px){.faq-wrap{grid-template-columns:1fr;gap:28px}}
+.faq details{border-top:1px solid var(--line);padding:20px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-size:var(--lg);font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--red);font-size:26px;line-height:1;flex:none}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{color:var(--muted);margin:12px 0 0;max-width:720px}
+.faq details a{color:var(--text)}
+
+/* footer + sticky */
+.site-footer{border-top:1px solid var(--line);padding:32px 0 120px;font-size:var(--sm);color:var(--muted)}
+.site-footer .container{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.site-footer a{text-decoration:none}
+.site-footer a:hover{color:var(--text)}
+@media (min-width:769px){.site-footer{padding-bottom:32px}}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(10,10,10,.97);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));display:none;align-items:center;justify-content:space-between;gap:12px}
+.sticky .meta{font-size:var(--sm);line-height:1.3}
+.sticky .meta b{display:block;font-weight:600}
+.sticky a{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;background:var(--red);color:#fff;text-decoration:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;flex:none}
+@media (max-width:768px){.sticky{display:flex}}
+</style>
+</head>
+<body>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2213461982899857&ev=PageView&noscript=1" alt=""></noscript>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="/" aria-label="Studio Dotbox home"><img src="images/logo.svg" alt="Studio Dotbox"></a>
+    <nav class="nav" aria-label="Page">
+      <a href="#masterclass">Masterclass</a>
+      <a href="#courses">Courses</a>
+      <a href="#educator">Educator</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#links">Join</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="grid-logo">
+      <!-- Grid logo: images/grid/grid-logo.png, 1000 x 1000 px, transparent PNG -->
+      <img src="images/grid/grid-logo.png" alt="The Grid by Studio Dotbox" onerror="this.remove()" onload="var f=this.nextElementSibling;if(f)f.remove()">
+      <div class="fallback" aria-hidden="true"><b>THE GRID</b><span>by Studio Dotbox</span></div>
+    </div>
+    <div>
+      <span class="label red">For architecture students</span>
+      <h1>Learn what college skips<span>.</span></h1>
+      <p class="lead">The Grid is a free community of architecture students from across India, run by Ar. Pratyush Sharma of Studio Dotbox. College teaches you to design. It rarely shows you how practice actually works: how projects run, how sites behave and how firms hire. Here you learn that from someone who does it every day.</p>
+      <ul class="benefits">
+        <li><b>A Must Know sheet every Monday</b><span>One page of practical knowledge, site know-how or industry news.</span></li>
+        <li><b>Live workshops and masterclasses</b><span>The topics your syllabus leaves out, taught from real projects.</span></li>
+        <li><b>Internship and fresher openings</b><span>Shared inside the group as they come in.</span></li>
+        <li><b>A student-only space</b><span>Every member registers before joining. No spam, no sellers.</span></li>
+      </ul>
+      <div class="btn-row">
+        <a class="ib" data-link="joinGrid" data-img="images/grid/btn-join-grid.png" style="--w:360px" target="_blank" rel="noopener">Join The Grid, free <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. WORKSHOP CARD: edit this block for every new workshop -->
+<section class="section" id="masterclass">
+  <div class="container">
+    <div class="head">
+      <span class="label">Next live session</span>
+      <h2>The masterclass.</h2>
+    </div>
+    <article class="card">
+      <div class="card-top">
+        <div class="card-main">
+          <span class="label red">Sunday, 15 November 2026</span>
+          <h2>From brief to BOQ to getting hired.</h2>
+          <p class="muted">The full project lifecycle, a live BOQ preparation lesson, and one deep lesson each for first and second years, third and fourth years, and final years and graduates.</p>
+          <dl class="facts">
+            <dt>Time</dt><dd>11:00 AM IST</dd>
+            <dt>Length</dt><dd>120 minutes with a 5 minute break, then live Q&amp;A</dd>
+            <dt>Where</dt><dd>Microsoft Teams</dd>
+            <dt>For</dt><dd>Architecture students, 1st year to fresh graduates</dd>
+          </dl>
+        </div>
+        <div class="card-side">
+          <div>
+            <span class="label">Seat</span>
+            <div class="price">&#8377;149<small>per student</small></div>
+            <p class="addon">Add the <b>resources and recordings pack for &#8377;99</b> at checkout.</p>
+            <p class="seats" id="seatsLine">Limited seats. Bookings close Sunday, 15 November at 10:00 AM.</p>
+          </div>
+          <div class="btn-row">
+            <a class="ib book" data-link="bookMasterclass" data-img="images/grid/btn-book-now.png">Book now <span class="arr">&rarr;</span></a>
+            <button class="ib ghost" type="button" aria-expanded="false" aria-controls="wsDetails" id="wsToggle" data-img="images/grid/btn-learn-more.png">Learn more <span class="arr">+</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="drop details" id="wsDetails">
+        <div class="inner" inert>
+          <div class="details-grid">
+            <div>
+              <h3>What you learn</h3>
+              <ol>
+                <li><b>The project lifecycle.</b> Every station from client brief to handover.</li>
+                <li><b>BOQ preparation.</b> Line items, quantity takeoff and rate build-up, built live.</li>
+                <li><b>Foundation lesson.</b> The numbers every first year must know.</li>
+                <li><b>Core lesson.</b> Your day-one drawing set.</li>
+                <li><b>Launch lesson.</b> What firms check in 30 seconds.</li>
+              </ol>
+            </div>
+            <div>
+              <h3>How it runs</h3>
+              <ul>
+                <li>After payment, you join the masterclass WhatsApp group.</li>
+                <li>The Teams link arrives 24 hours before, by email and in the group.</li>
+                <li>Waiting room opens at 10:50 AM. We start at 11:00 sharp.</li>
+                <li>Polls and questions every few minutes. Join from a laptop if you can.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>The &#8377;99 pack</h3>
+              <ul>
+                <li>Full recording, available for 30 days.</li>
+                <li>BOQ template with formulas.</li>
+                <li>Session handouts and the deck as a PDF.</li>
+                <li>Sent to your email the day after the session.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 3. COURSES -->
+<section class="section" id="courses">
+  <div class="container">
+    <div class="head">
+      <span class="label">Paid tracks</span>
+      <h2>Three tracks, by where you are.</h2>
+      <p class="muted" style="margin-top:16px">Each track is eight live sessions of 60 minutes on Microsoft Teams, in batches of up to 40 students. Pick your year below to see the full plan.</p>
+    </div>
+
+    <div class="courses">
+      <button class="tile t1" type="button" aria-expanded="false" aria-controls="p-foundation" data-img="images/grid/tile-foundation.jpg">
+        <span class="tf"><span><span class="tag">Foundation</span><h3>1st and 2nd year</h3></span><span><span class="yr">8 live sessions</span><br><span class="more">View details +</span></span></span>
+      </button>
+      <button class="tile t2" type="button" aria-expanded="false" aria-controls="p-core" data-img="images/grid/tile-core.jpg">
+        <span class="tf"><span><span class="tag">Core</span><h3>3rd and 4th year</h3></span><span><span class="yr">8 live sessions</span><br><span class="more">View details +</span></span></span>
+      </button>
+      <button class="tile t3" type="button" aria-expanded="false" aria-controls="p-launch" data-img="images/grid/tile-launch.jpg">
+        <span class="tf"><span><span class="tag">Launch</span><h3>5th year and graduates</h3></span><span><span class="yr">8 live sessions</span><br><span class="more">View details +</span></span></span>
+      </button>
+
+      <div class="drop panel p1" id="p-foundation"><div class="inner" inert><div>
+        <div class="cdetail">
+          <div>
+            <span class="label red">Foundation track</span>
+            <h3>Build the base college rushes past.</h3>
+            <p class="muted">For 1st and 2nd year students. You learn to see, sketch and think like an architect, then lock in the basics that every design studio assumes you already know.</p>
+            <ol class="sessions">
+              <li><div>Sketching and thinking like an architect <span>How architects observe, draw and decide.</span></div></li>
+              <li><div>First-year basics, part 1</div></li>
+              <li><div>First-year basics, part 2</div></li>
+              <li><div>First-year basics, part 3</div></li>
+              <li><div>Second-year essentials, part 1</div></li>
+              <li><div>Second-year essentials, part 2</div></li>
+              <li><div>Second-year essentials, part 3</div></li>
+              <li><div>Second-year essentials, part 4 <span>Plus what the Core track holds for you.</span></div></li>
+            </ol>
+          </div>
+          <div>
+            <dl class="kv">
+              <dt>Format</dt><dd>8 live sessions, 60 minutes each, on Microsoft Teams</dd>
+              <dt>Batch</dt><dd>Up to 40 students</dd>
+              <dt>Work</dt><dd>Assignments and feedback on Google Classroom</dd>
+              <dt>Missed one?</dt><dd>Recordings of earlier sessions for late joiners</dd>
+            </dl>
+            <div class="fee" data-fee="foundation"></div>
+            <p class="fee-note">One-time fee for the full track. No GST.</p>
+            <div class="btn-row">
+              <a class="ib" data-link="payFoundation" data-img="images/grid/btn-pay-foundation.png" target="_blank" rel="noopener">Enrol in Foundation <span class="arr">&rarr;</span></a>
+              <a class="ib ghost" data-link="trackRegistration" data-img="images/grid/btn-register-track.png" target="_blank" rel="noopener">Register for a track <span class="arr">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+      </div></div></div>
+
+      <div class="drop panel p2" id="p-core"><div class="inner" inert><div>
+        <div class="cdetail">
+          <div>
+            <span class="label red">Core track</span>
+            <h3>Become the intern firms want.</h3>
+            <p class="muted">For 3rd and 4th year students. The software workflow firms actually use, then everything you need to walk into your internship ready to contribute from week one.</p>
+            <ol class="sessions">
+              <li><div>Third year: AutoCAD and SketchUp workflow, part 1</div></li>
+              <li><div>Third year: AutoCAD and SketchUp workflow, part 2</div></li>
+              <li><div>Third year: AutoCAD and SketchUp workflow, part 3</div></li>
+              <li><div>Third year: AutoCAD and SketchUp workflow, part 4</div></li>
+              <li><div>Fourth year: internship readiness, part 1</div></li>
+              <li><div>Fourth year: internship readiness, part 2</div></li>
+              <li><div>Fourth year: internship readiness, part 3</div></li>
+              <li><div>Fourth year: internship readiness, part 4 <span>Plus what the Launch track holds for you.</span></div></li>
+            </ol>
+          </div>
+          <div>
+            <dl class="kv">
+              <dt>Format</dt><dd>8 live sessions, 60 minutes each, on Microsoft Teams</dd>
+              <dt>Batch</dt><dd>Up to 40 students</dd>
+              <dt>Work</dt><dd>Assignments and feedback on Google Classroom</dd>
+              <dt>After</dt><dd>Strong performers can be recommended to firms in our architects&rsquo; network</dd>
+            </dl>
+            <div class="fee" data-fee="core"></div>
+            <p class="fee-note">One-time fee for the full track. No GST.</p>
+            <div class="btn-row">
+              <a class="ib" data-link="payCore" data-img="images/grid/btn-pay-core.png" target="_blank" rel="noopener">Enrol in Core <span class="arr">&rarr;</span></a>
+              <a class="ib ghost" data-link="trackRegistration" data-img="images/grid/btn-register-track.png" target="_blank" rel="noopener">Register for a track <span class="arr">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+      </div></div></div>
+
+      <div class="drop panel p3" id="p-launch"><div class="inner" inert><div>
+        <div class="cdetail">
+          <div>
+            <span class="label red">Launch track</span>
+            <h3>Get hired, and hold your own.</h3>
+            <p class="muted">For 5th year students and fresh graduates. Your portfolio, your CV, the interview and the practical test, then your first year inside a firm.</p>
+            <ol class="sessions">
+              <li><div>What firms look for in a fresher</div></li>
+              <li><div>Building a portfolio that gets read</div></li>
+              <li><div>The one-page CV</div></li>
+              <li><div>Interviews and the practical test</div></li>
+              <li><div>Working drawings a firm expects on day one</div></li>
+              <li><div>Site, vendors and coordination</div></li>
+              <li><div>Clients, fees and professional conduct</div></li>
+              <li><div>Your first year in practice</div></li>
+            </ol>
+          </div>
+          <div>
+            <dl class="kv">
+              <dt>Format</dt><dd>8 live sessions, 60 minutes each, on Microsoft Teams</dd>
+              <dt>Batch</dt><dd>Up to 40 students</dd>
+              <dt>Work</dt><dd>Assignments and feedback on Google Classroom</dd>
+              <dt>Missed one?</dt><dd>Recordings of earlier sessions for late joiners</dd>
+            </dl>
+            <div class="fee" data-fee="launch"></div>
+            <p class="fee-note">One-time fee for the full track. No GST.</p>
+            <div class="btn-row">
+              <a class="ib" data-link="payLaunch" data-img="images/grid/btn-pay-launch.png" target="_blank" rel="noopener">Enrol in Launch <span class="arr">&rarr;</span></a>
+              <a class="ib ghost" data-link="trackRegistration" data-img="images/grid/btn-register-track.png" target="_blank" rel="noopener">Register for a track <span class="arr">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+      </div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. ABOUT THE EDUCATOR -->
+<section class="section" id="educator">
+  <div class="container about">
+    <div class="portrait">
+      <!-- Portrait: images/grid/pratyush.jpg, 1200 x 1500 px (4:5) -->
+      <img src="images/grid/pratyush.jpg" alt="Ar. Pratyush Sharma" onerror="this.remove()">
+      <div class="fallback">Portrait goes here<br>images/grid/pratyush.jpg<br>1200 x 1500 px</div>
+    </div>
+    <div>
+      <span class="label red">The educator</span>
+      <h2>Ar. Pratyush Sharma.</h2>
+      <p>I am an architect and the founder of Studio Dotbox, a founder-led practice in Greater Noida working across residential, commercial, retail, hospitality and urban planning. I have spent over eight years in practice: at the drawing board, on site, and across the table from clients and contractors.</p>
+      <p>My path was not a straight line. After my B.Arch from Amity University Jaipur and a year-long internship in New Delhi, I worked in Jaipur, moved to Delhi and spent years inside different firms learning how practice really runs. I started Studio Dotbox when I received my COA licence and went fully independent in 2024. Along the way I completed a Master&rsquo;s in Urban and Regional Planning, and I am now a doctoral researcher at GGSIPU.</p>
+      <p>I teach because almost everything that made me a better architect, I learnt after college. I want to build architects who lead, not just draw, grow the Indian architecture industry at home and abroad, and help people understand what an architect is really worth. The Grid is where that starts.</p>
+      <div class="creds">
+        <div><b>8+ years</b><span>In practice</span></div>
+        <div><b>B.Arch</b><span>Amity, 2019</span></div>
+        <div><b>M.Plan</b><span>VGU, 2026</span></div>
+        <div><b>PhD</b><span>Scholar, GGSIPU</span></div>
+      </div>
+      <div class="social">
+        <a class="soc" data-link="instagram" target="_blank" rel="noopener">Instagram <span aria-hidden="true">&#8599;</span></a>
+        <a class="soc" data-link="linkedin" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">&#8599;</span></a>
+        <a class="soc" data-link="youtube" target="_blank" rel="noopener">YouTube <span aria-hidden="true">&#8599;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. TESTIMONIALS AND RATINGS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="head">
+      <span class="label">Workshop ratings</span>
+      <h2>Rated by the students in the room.</h2>
+      <p class="muted" style="margin-top:16px">From the feedback students gave after our &ldquo;What College Won&rsquo;t Teach You&rdquo; workshops.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>4.47<small>/5</small></b><span>Average rating</span></div>
+      <div class="stat"><b>8.39<small>/10</small></b><span>Likelihood to recommend</span></div>
+      <div class="stat"><b>55</b><span>Students gave feedback</span></div>
+      <div class="stat"><b>225+</b><span>Students in The Grid</span></div>
+    </div>
+
+    <!-- Quotes used with each student's permission to show first name and college. -->
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>I&rsquo;m a first year student and I was a little confused about what to do, but this session guided me a lot.</blockquote>
+        <figcaption><b>Sujal</b>Dr. Baliram Hiray College of Architecture, Mumbai</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>Much needed support for architecture students.</blockquote>
+        <figcaption><b>Shanta</b>KRVIA, Mumbai</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>This session is very helpful. Everyone should join the upcoming workshop.</blockquote>
+        <figcaption><b>Debjit</b>Howrah</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ALL LINKS -->
+<section class="section" id="links">
+  <div class="container">
+    <div class="head">
+      <span class="label">Every link in one place</span>
+      <h2>Join, book or enrol.</h2>
+    </div>
+    <div class="hub">
+      <div class="hub-item"><div><h3>Join The Grid</h3><p>Free. Register once and you are added to the student group.</p></div>
+        <a class="ib" data-link="joinGrid" data-img="images/grid/btn-join-grid.png" target="_blank" rel="noopener">Join The Grid, free <span class="arr">&rarr;</span></a></div>
+      <div class="hub-item"><div><h3>Book the masterclass</h3><p>Sunday, 15 November, 11 AM on Microsoft Teams. &#8377;149 seat.</p></div>
+        <a class="ib book" data-link="bookMasterclass" data-img="images/grid/btn-book-now.png">Book now <span class="arr">&rarr;</span></a></div>
+      <div class="hub-item"><div><h3>Register for a paid track</h3><p>One form for Foundation, Core and Launch. Pick your track and pay on the next step.</p></div>
+        <a class="ib ghost" data-link="trackRegistration" data-img="images/grid/btn-register-track.png" target="_blank" rel="noopener">Register for a track <span class="arr">&rarr;</span></a></div>
+      <div class="hub-item"><div><h3>Pay for your track</h3><p>Already registered? Pay directly for your track here.</p></div>
+        <div class="btn-row" style="flex-direction:column">
+          <a class="ib" data-link="payFoundation" data-img="images/grid/btn-pay-foundation.png" target="_blank" rel="noopener">Enrol in Foundation <span class="arr">&rarr;</span></a>
+          <a class="ib" data-link="payCore" data-img="images/grid/btn-pay-core.png" target="_blank" rel="noopener">Enrol in Core <span class="arr">&rarr;</span></a>
+          <a class="ib" data-link="payLaunch" data-img="images/grid/btn-pay-launch.png" target="_blank" rel="noopener">Enrol in Launch <span class="arr">&rarr;</span></a>
+        </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FAQ -->
+<section class="section faq" id="faq">
+  <div class="container faq-wrap">
+    <div>
+      <span class="label">Questions</span>
+      <h2>Before you join.</h2>
+    </div>
+    <div>
+      <details><summary>Who is The Grid for?</summary><p>Architecture students from 1st year to fresh graduates, anywhere in India. Practising architects are not added to the student group.</p></details>
+      <details><summary>Is joining The Grid free?</summary><p>Yes. Fill in the registration form and you are added to the group after a quick check. Workshops and tracks are paid separately.</p></details>
+      <details><summary>When do I get the masterclass link?</summary><p>24 hours before the session, by email and in the masterclass WhatsApp group. You join the group straight after payment.</p></details>
+      <details><summary>Will the masterclass be recorded?</summary><p>Yes, for students who take the resources and recordings pack (&#8377;99 at checkout). The recording stays available for 30 days.</p></details>
+      <details><summary>Can I get a refund?</summary><p>Seats are non-refundable. If a session is rescheduled, your seat moves to the new date automatically.</p></details>
+      <details><summary>Which track should I pick?</summary><p>Foundation for 1st and 2nd year, Core for 3rd and 4th year, Launch for 5th year and fresh graduates. Not sure? Write to <a data-link="emailHref">studiodotbox@gmail.com</a> with your year and college.</p></details>
+      <details><summary>How do the paid tracks run?</summary><p>Eight live 60 minute sessions on Microsoft Teams, in batches of up to 40. Assignments and feedback run on Google Classroom, and each batch has its own WhatsApp group.</p></details>
+      <details><summary>What if I join a batch late or miss a session?</summary><p>You get the recordings of the sessions held before you joined, so you can catch up before the next live class.</p></details>
+      <details><summary>I am outside India. Can I join?</summary><p>Yes. Write to <a data-link="emailHref">studiodotbox@gmail.com</a> before paying and we will share a payment option that works for you.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; Studio Dotbox, 2026. A studio-based practice, based in Noida.</span>
+    <span><a href="/">Home</a> &nbsp;&middot;&nbsp; <a href="/contact">Contact</a> &nbsp;&middot;&nbsp; <a data-link="emailHref">studiodotbox@gmail.com</a></span>
+  </div>
+</footer>
+
+<div class="sticky" role="region" aria-label="Book the masterclass">
+  <div class="meta"><b>Masterclass, Sun 15 Nov</b><span class="muted">11 AM &middot; &#8377;149 seat</span></div>
+  <a class="book" data-link="bookMasterclass">Book now</a>
+</div>
+
+<script>
+/* ============================================================
+   EDIT HERE. Every link and fee on the page comes from this block.
+   Leave a link as "" to hide its buttons.
+   ============================================================ */
+var CONFIG = {
+  links: {
+    joinGrid:          "https://forms.gle/pm9CzFH2cQ46eSZz9",
+    bookMasterclass:   "https://rzp.io/rzp/KtBLLtS",
+    trackRegistration: "https://forms.gle/xZEXbtw9gkFb8xkf9",
+    payFoundation:     "https://rzp.io/rzp/Cok6P6Q",
+    payCore:           "https://rzp.io/rzp/Xc3c3qm",
+    payLaunch:         "https://rzp.io/rzp/SgJrb6h",
+    instagram:         "https://www.instagram.com/architect.pratyusharma/",
+    linkedin:          "https://www.linkedin.com/in/pratyush-studiodotbox/",
+    youtube:           "https://www.youtube.com/@architect.pratyusharma",
+    emailHref:         "mailto:studiodotbox@gmail.com"
+  },
+  /* Track fees in rupees. null shows "Fee shared at registration". */
+  fees: { foundation: 2399, core: null, launch: null },
+  /* Seats left on the masterclass card. null hides the count. */
+  seatsLeft: null
+};
+
+(function () {
+  /* links */
+  document.querySelectorAll('[data-link]').forEach(function (el) {
+    var url = CONFIG.links[el.dataset.link];
+    if (!url) { el.style.display = 'none'; return; }
+    el.setAttribute('href', url);
+  });
+
+  /* fees */
+  document.querySelectorAll('[data-fee]').forEach(function (el) {
+    var f = CONFIG.fees[el.dataset.fee];
+    if (f) { el.innerHTML = '&#8377;' + Number(f).toLocaleString('en-IN'); }
+    else { el.textContent = 'Fee shared at registration'; el.style.fontSize = '24px'; }
+  });
+
+  /* seats */
+  if (CONFIG.seatsLeft !== null) {
+    document.getElementById('seatsLine').textContent = CONFIG.seatsLeft + ' seats left. Bookings close Sunday, 15 November at 10:00 AM.';
+  }
+
+  /* swap in ChatGPT button images when the file exists */
+  document.querySelectorAll('[data-img]').forEach(function (el) {
+    var label = el.textContent.replace(/\s+/g, ' ').replace(/[+→]/g, '').trim();
+    var img = new Image();
+    img.onload = function () {
+      el.classList.add('has-img');
+      el.innerHTML = '';
+      img.alt = label;
+      el.appendChild(img);
+    };
+    img.src = el.dataset.img;
+  });
+
+  /* dropdowns */
+  function setOpen(btn, panel, open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panel.classList.toggle('open', open);
+    var inner = panel.querySelector('.inner');
+    if (open) inner.removeAttribute('inert'); else inner.setAttribute('inert', '');
+  }
+
+  var wsBtn = document.getElementById('wsToggle');
+  var wsPanel = document.getElementById('wsDetails');
+  wsBtn.addEventListener('click', function () {
+    setOpen(wsBtn, wsPanel, wsBtn.getAttribute('aria-expanded') !== 'true');
+  });
+
+  var tiles = document.querySelectorAll('.tile');
+  tiles.forEach(function (t) {
+    t.addEventListener('click', function () {
+      var opening = t.getAttribute('aria-expanded') !== 'true';
+      tiles.forEach(function (o) { setOpen(o, document.getElementById(o.getAttribute('aria-controls')), false); });
+      if (opening) {
+        var p = document.getElementById(t.getAttribute('aria-controls'));
+        setOpen(t, p, true);
+        setTimeout(function () { p.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 120);
+      }
+    });
+  });
+
+  /* pixel: checkout intent */
+  document.querySelectorAll('.book').forEach(function (b) {
+    b.addEventListener('click', function () {
+      try { fbq('track', 'InitiateCheckout', { value: 149, currency: 'INR' }); } catch (e) {}
+    });
+  });
+})();
+</script>
+</body>
+</html>

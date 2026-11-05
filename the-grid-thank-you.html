@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seat confirmed | The Grid | Studio Dotbox</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2213461982899857');
+fbq('track','PageView');
+(function(){
+  /* Fire Purchase once per payment, so a refresh does not double count */
+  var q = new URLSearchParams(location.search);
+  var pid = q.get('razorpay_payment_id') || q.get('payment_id') || 'nopid';
+  var key = 'grid_purchase_' + pid;
+  var seen = false;
+  try { seen = localStorage.getItem(key) === '1'; } catch (e) {}
+  if (!seen) {
+    fbq('track', 'Purchase', {value: 149, currency: 'INR', content_name: 'Grid masterclass 15 Nov'}, {eventID: pid});
+    try { localStorage.setItem(key, '1'); } catch (e) {}
+  }
+})();
+</script>
+
+<style>
+:root{--color-red:#E8000D;--color-bg:#0A0A0A;--color-text:#EEEEEE;--color-text-muted:#999999;--color-line:#2A2A2A;--color-surface:#161616;--font:"Helvetica Neue",Helvetica,Arial,system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+@media (max-width:600px){.container{padding:0 16px}}
+header{border-bottom:1px solid var(--color-line)}
+header .container{height:72px;display:flex;align-items:center}
+header img{height:22px;width:auto}
+main{padding:96px 0 80px}
+.label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-red);display:block;margin-bottom:16px}
+h1{font-size:56px;font-weight:500;letter-spacing:-0.02em;line-height:1.05;margin:0 0 24px}
+@media (max-width:600px){h1{font-size:40px}main{padding:64px 0}}
+.lead{font-size:20px;margin:0 0 40px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;background:var(--color-red);color:#fff;text-decoration:none;font-weight:500;border:1px solid var(--color-red)}
+.btn:hover{background:#c4000b}
+.steps{list-style:none;padding:0;margin:56px 0 0;border-top:1px solid var(--color-line);counter-reset:s}
+.steps li{display:grid;grid-template-columns:56px 1fr;padding:24px 0;border-bottom:1px solid var(--color-line);counter-increment:s}
+.steps li::before{content:counter(s,decimal-leading-zero);color:var(--color-red);font-size:14px;padding-top:3px}
+.steps b{font-weight:500;display:block;margin-bottom:4px}
+.steps span{color:var(--color-text-muted);font-size:15px}
+.foot{margin-top:48px;color:var(--color-text-muted);font-size:14px}
+.foot a{color:var(--color-text)}
+</style>
+</head>
+<body>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2213461982899857&ev=PageView&noscript=1" alt=""></noscript>
+<header><div class="container"><a href="/" aria-label="Studio Dotbox home"><img src="images/logo.svg" alt="Studio Dotbox"></a></div></header>
+<main>
+  <div class="container">
+    <span class="label">Payment received</span>
+    <h1>Your seat is confirmed.</h1>
+    <p class="lead">One step left. Join the masterclass WhatsApp group now. The Teams link, reminders and resources are shared only there and by email.</p>
+    <a class="btn" href="https://chat.whatsapp.com/LOWUCbAaKhSBMuFBLULkoR">Join the masterclass group &rarr;</a>
+
+    <ol class="steps">
+      <li><div><b>Now</b><span>Join the WhatsApp group above. Check your email for the Razorpay receipt.</span></div></li>
+      <li><div><b>Saturday 14 November, 11 AM</b><span>Your Microsoft Teams link arrives by email and in the group.</span></div></li>
+      <li><div><b>Sunday 15 November, 10:50 AM</b><span>The waiting room opens. We start at 11:00 sharp. Join from a laptop if you can, with a notebook ready.</span></div></li>
+      <li><div><b>Monday 16 November</b><span>If you took the resources and recordings pack, the recording and handouts reach your email by 6 PM.</span></div></li>
+    </ol>
+
+    <p class="foot">Anything wrong with your booking? Write to <a href="mailto:studiodotbox@gmail.com">studiodotbox@gmail.com</a> with your payment ID.</p>
+  </div>
+</main>
+</body>
+</html>
