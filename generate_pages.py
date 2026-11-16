@@ -41,6 +41,11 @@ WEB3FORMS_KEY = os.environ.get('WEB3FORMS_KEY', 'YOUR_WEB3FORMS_KEY_HERE')
 # emitted, so builds never ship a broken or fake tag.
 GA_MEASUREMENT_ID = os.environ.get('GA_MEASUREMENT_ID', 'G-WMKRFRGXS8')
 
+# Microsoft Clarity project ID. Injected into the <head> of every generated
+# page via write_page(). Like the GA ID, it ships in public page source, so it
+# is safe to hardcode; override per-build with a CLARITY_PROJECT_ID env var.
+CLARITY_PROJECT_ID = os.environ.get('CLARITY_PROJECT_ID', 'zeme8k8gbs')
+
 # Canonical host for this site. www is the primary domain; canonical tags,
 # sitemap URLs, and robots all point here.
 BASE_URL = "https://www.studiodotbox.com"
@@ -73,6 +78,18 @@ GA_SNIPPET_TEMPLATE = """  <!-- Google tag (gtag.js) -->
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', '__GA_ID__');
+  </script>
+"""
+
+# Microsoft Clarity. Same approach as GA: kept out of .format(), with the
+# __CLARITY_ID__ token swapped in write_page().
+CLARITY_SNIPPET_TEMPLATE = """  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "__CLARITY_ID__");
   </script>
 """
 
@@ -161,6 +178,9 @@ FOOTER_TEMPLATE = """
           <h4>Contact</h4>
           <a href="mailto:studiodotbox@gmail.com">studiodotbox@gmail.com</a>
           <a href="tel:+919571129136">+91 9571 129 136</a>
+
+          <h4 class="site-footer__subhead">Education</h4>
+          <a href="{prefix}the-grid.html">The Grid →</a>
         </div>
 
         <div class="site-footer__column">
@@ -273,6 +293,10 @@ def write_page(filename, title, description, body, depth=0,
         ga_tag = GA_SNIPPET_TEMPLATE.replace('__GA_ID__', GA_MEASUREMENT_ID)
     else:
         ga_tag = ""
+
+    # Microsoft Clarity: appended to the same head slot as GA.
+    if CLARITY_PROJECT_ID:
+        ga_tag += CLARITY_SNIPPET_TEMPLATE.replace('__CLARITY_ID__', CLARITY_PROJECT_ID)
 
     html = HEAD_TEMPLATE.format(
         title=title, description=description, canonical=canonical_tag,
